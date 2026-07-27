@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · LIDU</title>
+<link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+<div id="app">
+  <div id="sidebarHolder"></div>
+  <div class="main"><div id="pageRoot"></div></div>
+</div>
+
+<!-- Config: the only file that changes per clinic -->
+<script src="../config/config.js"></script>
+
+<!-- Shared utilities -->
+<script src="../shared/utils.js"></script>
+<script src="../shared/constants.js"></script>
+<script src="../shared/theme.js"></script>
+
+<!-- Data layer -->
+<script src="../services/mockData.js"></script>
+<script src="../services/googleSheetsService.js"></script>
+<script src="../services/dataService.js"></script>
+
+<!-- Reusable components -->
+<script src="../components/toast.js"></script>
+<script src="../components/sidebar.js"></script>
+<script src="../components/appointmentCard.js"></script>
+<script src="../components/patientCard.js"></script>
+<script src="../components/toothChart.js"></script>
+<script src="../components/modals.js"></script>
+
+<!-- Page component -->
+<script src="../components/dashboard.js"></script>
+
+<script>
+  document.getElementById("sidebarHolder").outerHTML = window.LIDU_COMPONENTS.renderSidebar("dashboard");
+  window.LIDU_COMPONENTS.initDashboardPage();
+</script>
+</body>
+</html>
